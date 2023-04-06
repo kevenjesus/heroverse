@@ -33,12 +33,7 @@ export const weightValues = {
     bold: '700'
 }
 
-export const HeadlineTypes = {
-    h1: fontSizes.heading1,
-    h2: fontSizes.heading2,
-    h3: fontSizes.heading3,
-    h4: fontSizes.heading4
-}
+
 
 export const GlobalStyle = createGlobalStyle`
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
@@ -68,13 +63,6 @@ export const LinkHref = styled.button<FontStyleType>`
     font-weight: ${({weight}) => weight ? weight : weightValues.regular};
     color: ${({color}) => color ? color : colors.primary};
     text-decoration: underline;
-`
-
-export const Headline = styled.h1<FontStyleHeadlineTYpe>`
-    line-height: 175%;
-    color: ${({color}) => color ? color : colors.primary};
-    font-weight: ${({weight}) => weight ? weight : weightValues.bold};
-    font-size: ${({type}) => type ? HeadlineTypes[type] : fontSizes.heading1};
 `
 
 export const Container = styled.div`
