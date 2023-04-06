@@ -7,11 +7,9 @@ export const colors = {
     primaryHover: '#1F8097',
     secondary: '#fb8500',
     secondaryHover: '#D57100',
-    additional: {
-        darkBlue: '#023047',
-        lightBlue: '#8ecae6',
-        black: '#3E3838'
-    }
+    darkBlue: '#023047',
+    lightBlue: '#8ecae6',
+    black: '#3E3838'
 }
 
 export const fontSizes = {
