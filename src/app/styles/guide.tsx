@@ -1,6 +1,12 @@
 import styled, { createGlobalStyle, css } from 'styled-components'
-import { ButtonTypes, FontStyleHeadlineTYpe, FontStyleType } from './types'
+import { FontStyleType } from './types'
 
+export const breakpoints = {
+    sm: '768px',
+    md: '1024px',
+    lg: '1280px',
+    xl: '1440px'
+}
 
 export const colors = {
     primary: '#219ebc',

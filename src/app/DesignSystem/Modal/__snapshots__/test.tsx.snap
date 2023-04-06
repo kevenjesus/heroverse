@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Modal should not render 1`] = `<div />`;
+
+exports[`Modal should render 1`] = `
+<div>
+  <div
+    class="sc-hLseeU jXRGCP"
+  />
+  <div
+    class="sc-eDDNvR hlQcnS"
+  >
+    <header
+      class="sc-jTrPJq hkROzX"
+    >
+      <h3
+        class="sc-dmqHEX mcoGn"
+        type="h3"
+      >
+        modal
+      </h3>
+      <button
+        aria-label="close-modal"
+        role="button"
+      >
+        <img
+          alt="fechar"
+          src="/cancel.png"
+        />
+      </button>
+    </header>
+    modal
+  </div>
+</div>
+`;
