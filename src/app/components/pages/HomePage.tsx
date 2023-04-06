@@ -1,9 +1,10 @@
 'use client'
-import Typographic from "../../DesignSystem/Typographic"
+
+import Button from "@/app/DesignSystem/Button"
 
 export default function HomePage() {
     return (
-        <Typographic>ola</Typographic>
+        <Button loading={true} variant="primary">Carregando...</Button>
     )
 }
   

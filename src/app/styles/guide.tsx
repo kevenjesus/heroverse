@@ -59,6 +59,7 @@ export const GlobalStyle = createGlobalStyle`
     button {
         border: 0;
         background: transparent;
+        cursor: pointer;
     }
 `
 
@@ -74,22 +75,6 @@ export const Headline = styled.h1<FontStyleHeadlineTYpe>`
     color: ${({color}) => color ? color : colors.primary};
     font-weight: ${({weight}) => weight ? weight : weightValues.bold};
     font-size: ${({type}) => type ? HeadlineTypes[type] : fontSizes.heading1};
-`
-
-export const Button = styled.button<ButtonTypes>`
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 15px 0px;
-    gap: 10px;
-    background: ${({variant}) => variant ? colors[variant] : colors.primary};
-    color: #fff;
-    font-size: ${fontSizes.regular};
-    font-weight: ${weightValues.bold};
-    &:hover {
-        background: ${({variant}) => variant === 'primary' ? colors.primaryHover : colors.secondaryHover};
-    }
 `
 
 export const Container = styled.div`
