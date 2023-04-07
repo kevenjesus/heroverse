@@ -16,7 +16,7 @@ describe('TextField', () => {
 
   it('should render the component', () => {
     const { container } = render(<TextField {...props} />);
-    expect(container).toBeInTheDocument();
+    expect(container).toMatchSnapshot();
   });
 
   

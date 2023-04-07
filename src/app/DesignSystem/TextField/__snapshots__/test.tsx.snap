@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextField should render the component 1`] = `
+<div>
+  <input
+    class="sc-dmqHEX aYPxC"
+    name="test-field"
+    placeholder="Enter your text here"
+    role="textbox"
+    type="text"
+    value=""
+  />
+</div>
+`;

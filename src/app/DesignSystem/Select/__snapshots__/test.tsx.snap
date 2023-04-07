@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Select should display placeholder text when no option is selected 1`] = `
+<div>
+  <div
+    class="sc-hLseeU dcExOP"
+  >
+    <div
+      class="sc-jTrPJq kBePcy"
+    >
+      <p
+        class="sc-dmqHEX hZDiJS"
+      >
+        Selecione
+      </p>
+      <img
+        alt="Selecionar"
+        height="13"
+        src="/arrow-down.png"
+        width="13"
+      />
+    </div>
+  </div>
+</div>
+`;

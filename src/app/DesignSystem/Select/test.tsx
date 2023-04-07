@@ -11,8 +11,8 @@ const options = [
 
 describe('Select', () => {
   it('should display placeholder text when no option is selected', () => {
-    const { getByText } = render(<Select options={options} onChange={() => {}} />);
-    expect(getByText('Selecione')).toBeInTheDocument();
+    const { container } = render(<Select options={options} onChange={() => {}} />);
+    expect(container).toMatchSnapshot();
   });
 
   it('should display selected option', () => {
