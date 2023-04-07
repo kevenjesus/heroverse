@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Label should render 1`] = `
+<div>
+  <div
+    class="sc-hLseeU bhjssR"
+  >
+    <div
+      class="sc-eDDNvR fgXnaz"
+    />
+    <p
+      class="sc-dmqHEX hZDiJS"
+    >
+      Test label
+    </p>
+  </div>
+</div>
+`;

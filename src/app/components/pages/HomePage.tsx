@@ -1,5 +1,6 @@
 'use client'
 
+import Label from "@/app/DesignSystem/Label"
 import Select from "@/app/DesignSystem/Select"
 import { OptionType } from "@/app/DesignSystem/Select/types"
 import TextField from "@/app/DesignSystem/TextField"
@@ -37,11 +38,8 @@ const options = [
 ]
 
 export default function HomePage() {
-    const [value, setValue] = useState<string>('')
     return (
-        <div style={{width: '300px', margin: '0 auto'}}>
-            <TextField type="text" name="test" value={value} placeholder="digite o texto" onChange={(event) => setValue(event.target.value)} />
-        </div>
+        <Label variant="secondary">Conteudo</Label>
     )
 }
   
