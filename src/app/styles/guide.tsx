@@ -15,7 +15,10 @@ export const colors = {
     secondaryHover: '#D57100',
     darkBlue: '#023047',
     lightBlue: '#8ecae6',
-    black: '#3E3838'
+    black: '#3E3838',
+    white: '#fff',
+    alertError: '#EB5757',
+    alertSuccess: '#6FCF97',
 }
 
 export const fontSizes = {

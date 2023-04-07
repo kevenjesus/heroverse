@@ -1,5 +1,6 @@
 'use client'
 
+import Alert from "@/app/DesignSystem/Alert"
 import Label from "@/app/DesignSystem/Label"
 import Select from "@/app/DesignSystem/Select"
 import { OptionType } from "@/app/DesignSystem/Select/types"
@@ -39,7 +40,7 @@ const options = [
 
 export default function HomePage() {
     return (
-        <Label variant="secondary">Conteudo</Label>
+        <Alert type="error">deu tudo bem obrigado!</Alert>
     )
 }
   

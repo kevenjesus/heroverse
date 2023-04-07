@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Alert component should render with the type Success 1`] = `
+<div>
+  <div
+    class="sc-hLseeU fgkOnj"
+    type="success"
+  >
+    <img
+      alt="Test alert"
+      src="/checked.png"
+      width="28"
+    />
+    <p
+      class="sc-dmqHEX iEKdJV"
+      color="white"
+    >
+      Test alert
+    </p>
+  </div>
+</div>
+`;
