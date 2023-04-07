@@ -2,6 +2,7 @@
 
 import Select from "@/app/DesignSystem/Select"
 import { OptionType } from "@/app/DesignSystem/Select/types"
+import TextField from "@/app/DesignSystem/TextField"
 import { useState } from "react"
 
 const options = [
@@ -36,12 +37,10 @@ const options = [
 ]
 
 export default function HomePage() {
-    const [value, setValue] = useState<OptionType | null>(null)
-    const change = (item: OptionType) => setValue(item)
-    console.log(value?.label)
+    const [value, setValue] = useState<string>('')
     return (
         <div style={{width: '300px', margin: '0 auto'}}>
-            <Select value={value?.label} options={options} placeholder="Categoria" onChange={change}  />
+            <TextField type="text" name="test" value={value} placeholder="digite o texto" onChange={(event) => setValue(event.target.value)} />
         </div>
     )
 }
