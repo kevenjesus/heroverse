@@ -14,5 +14,4 @@ export interface CardProps {
         variant: colorsType
     }
     actions?: ACtionsProps
-    
 }
