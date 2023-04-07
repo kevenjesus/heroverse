@@ -2,17 +2,19 @@
 
 import TextField from '@/app/DesignSystem/TextField'
 import * as S from './style'
-import { ChangeEvent, useCallback, useState } from 'react'
+import { ChangeEvent, useCallback, useEffect, useState } from 'react'
 import Button from '@/app/DesignSystem/Button'
 import Alert from '@/app/DesignSystem/Alert'
 import { MessageTypes } from '@/app/types'
 import { fetchLogin } from '@/app/services/login'
 import { useRouter } from 'next/navigation'
+import useCheckIsLoggin from '@/app/hook/useCheckIsLoggin'
 
 export default function LoginPage() {
     const [fieldLogin, setLogin] = useState("")
     const [fieldPassword, setPassword] = useState("")
     const [message, setMessage] = useState<MessageTypes | null>(null)
+    const { mount, setMount, checkisLoggin } = useCheckIsLoggin()
     const route = useRouter()
 
     const handleLogin = useCallback((event: ChangeEvent<HTMLInputElement>) => {
@@ -56,6 +58,18 @@ export default function LoginPage() {
             }
         }
     }, [validFields, route])
+
+    useEffect(() => {
+        if(checkisLoggin()) {
+            route.push('/')
+        }else {
+            setMount(true)
+        }
+    },[checkisLoggin])
+    
+    if(!mount) {
+        return <></>
+    }
 
     return (
         <S.Wrapper>

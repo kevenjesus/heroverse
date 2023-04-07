@@ -8,6 +8,7 @@ import Select from "@/app/DesignSystem/Select"
 import { OptionType } from "@/app/DesignSystem/Select/types"
 import TextField from "@/app/DesignSystem/TextField"
 import { useState } from "react"
+import Layout from "../../Layout"
 
 const options = [
     {
@@ -42,9 +43,11 @@ const options = [
 
 export default function HomePage() {
     return (
-        <div style={{width: '300px'}}>
-        <LinkHref href={() => console.log('clicked')}>acessar link</LinkHref>
-        </div>
+        <Layout>
+            <div style={{width: '300px'}}>
+            <LinkHref href={() => console.log('clicked')}>acessar link</LinkHref>
+            </div>
+        </Layout>
     )
 }
   
