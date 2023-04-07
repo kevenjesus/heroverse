@@ -3,9 +3,9 @@
 import * as S from './style'
 import { ButtonProps } from './types'
 
-export default function Button({children, loading, variant, onClick}: ButtonProps) {
+export default function Button({children, type, loading, variant, onClick}: ButtonProps) {
     return (
-        <S.ButtonItem variant={variant} onClick={onClick}>
+        <S.ButtonItem type={type} variant={variant} onClick={onClick}>
             {
                 loading ? (
                     <>
