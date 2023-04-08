@@ -1,16 +1,6 @@
 import { breakpoints } from '@/app/styles/guide'
 import styled from 'styled-components'
 
-export const Overlay = styled.div`
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    background: rgba(0,0,0,.7);
-    z-index: 5;
-    overflow: hidden;
-`
 
 export const ModalItem = styled.div`
     width: 95%;

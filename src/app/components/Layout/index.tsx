@@ -3,6 +3,7 @@
 import useCheckIsLoggin from "@/app/hook/useCheckIsLoggin";
 import { ReactNode, useEffect, useState } from "react";
 import Header from "../Header";
+import Footer from "../Footer";
 export default function Layout({children}: {children: ReactNode}) {
     const { mount, setMount, checkisLoggin } = useCheckIsLoggin()
 
@@ -21,6 +22,7 @@ export default function Layout({children}: {children: ReactNode}) {
     return (
         <main>
             {children}
+            <Footer />
         </main>
     )
 }

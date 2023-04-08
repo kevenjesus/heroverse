@@ -9,6 +9,7 @@ import { MessageTypes } from '@/app/types'
 import { fetchLogin } from '@/app/services/login'
 import { useRouter } from 'next/navigation'
 import useCheckIsLoggin from '@/app/hook/useCheckIsLoggin'
+import Footer from '../../Footer'
 
 export default function LoginPage() {
     const [fieldLogin, setLogin] = useState("")
@@ -84,6 +85,7 @@ export default function LoginPage() {
                     )
                 }
             </S.Form>
+            <Footer />
         </S.Wrapper>
     )
 }

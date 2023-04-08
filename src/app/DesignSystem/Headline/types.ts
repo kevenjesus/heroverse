@@ -1,5 +1,5 @@
 import { fontSizes } from "@/app/styles/guide"
-import { HeadlineType, colorsType, fontSizeType, weightTye } from "@/app/styles/types"
+import { AlignType, HeadlineType, colorsType, fontSizeType, weightTye } from "@/app/styles/types"
 import { ReactNode } from "react"
 
 export const HeadlineTypes = {
@@ -15,4 +15,5 @@ export interface HeadlineProps {
     weight?: weightTye
     color?: colorsType
     as: HeadlineType
+    align?: AlignType
 }

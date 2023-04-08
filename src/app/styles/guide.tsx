@@ -61,6 +61,17 @@ export const GlobalStyle = createGlobalStyle`
     }
 `
 
+export const Overlay = styled.div`
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background: rgba(0,0,0,.7);
+    z-index: 5;
+    overflow: hidden;
+`
+
 export const Container = styled.div`
     width: 100%;
     padding: 0 16px;

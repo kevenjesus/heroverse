@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react'
 import Headline from '../Headline'
 import * as S from './style'
+import * as Guide from '../../styles/guide'
 import { ModalProps } from './types'
 
 export default function Modal({children, title, open, onClose, onClosed, onOpened}: ModalProps) {
@@ -29,7 +30,7 @@ export default function Modal({children, title, open, onClose, onClosed, onOpene
     }
     return (
         <>
-            <S.Overlay />
+            <Guide.Overlay />
             <S.ModalItem>
                 <S.Heading>
                     <Headline as="h3">{title}</Headline>

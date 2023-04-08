@@ -6,4 +6,5 @@ export const TypographicItem = styled.p<FontStyleType>`
     font-size: ${({size}) => size ? size : fontSizes.regular};
     font-weight: ${({weight}) => weight ? weight : weightValues.regular};
     color: ${({color}) => color ? colors[color] : colors.black};
+    text-align: ${({align}) => align ? align : 'left'};
 `
