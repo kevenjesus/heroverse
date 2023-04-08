@@ -1,6 +1,6 @@
 export interface OptionType {
     label: string
-    value: string | number
+    value: string | number | boolean
 }
 
 export interface SelectProps {

@@ -27,13 +27,7 @@ export const fontSizes = {
     heading3: '20px',
     heading4: '18px',
     small: '12px',
-    regular: '14px',
-    heading1Lg: '35px',
-    heading2Lg: '30px',
-    heading3Lg: '25px',
-    heading4Lg: '20px',
-    smallLg: '14px',
-    regularLg: '16px',
+    regular: '14px'
 }
 
 export const weightValues = {
@@ -67,13 +61,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 `
 
-export const LinkHref = styled.button<FontStyleType>`
-    font-size: ${({size}) => size ? size : fontSizes.regular};
-    font-weight: ${({weight}) => weight ? weight : weightValues.regular};
-    color: ${({color}) => color ? color : colors.primary};
-    text-decoration: underline;
-`
-
 export const Container = styled.div`
-    font-size: 90px;
+    width: 100%;
+    padding: 0 16px;
 `

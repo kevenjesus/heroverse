@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import Typographic from '../Typographic'
 import * as S from './style'
 import { OptionType, SelectProps } from './types'
+import { uid } from 'uid'
 
 export default function Select({options, value, placeholder = 'Selecione', onChange}: SelectProps) {
     const [isOpen, setOpen] = useState(false)
@@ -37,7 +38,7 @@ export default function Select({options, value, placeholder = 'Selecione', onCha
                         <S.SelectBoxContent>
                             {
                                 options.map(option => (
-                                    <S.SelectItem onClick={() => handleChange(option)} key={option.value}>{option.label}</S.SelectItem>
+                                    <S.SelectItem onClick={() => handleChange(option)} key={uid()}>{option.label}</S.SelectItem>
                                 ))
                             }
                         </S.SelectBoxContent>

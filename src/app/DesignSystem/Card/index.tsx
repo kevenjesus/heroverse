@@ -14,10 +14,10 @@ export default function Card({id, title, description, category, actions}: CardPr
                 {
                     actions && (
                         <S.Actions>
-                            <button onClick={() => actions.onEdit(id)}>
+                            <button onClick={() => actions.onEdit()}>
                                 <img src="/edit.png" alt="Editar" />
                             </button>
-                            <button onClick={() => actions.onDelete(id)}>
+                            <button onClick={() => actions.onDelete()}>
                                 <img src="/trash.png" alt="Excluir" />
                             </button>
                         </S.Actions>
