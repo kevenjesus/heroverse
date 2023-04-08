@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginPage should render 1`] = `
+<div>
+  <div
+    class="sc-hLseeU ecUSAy"
+  >
+    <img
+      alt="Hero Verse"
+      class="sc-eDDNvR gfOpcO"
+      src="/heroverse.png"
+      width="160"
+    />
+    <form
+      class="sc-jTrPJq gfIiLF"
+    >
+      <input
+        class="sc-dmqHEX aYPxC"
+        name="login"
+        placeholder="Login"
+        role="textbox"
+        type="text"
+        value=""
+      />
+      <input
+        class="sc-dmqHEX aYPxC"
+        name="password"
+        placeholder="Senha"
+        role="textbox"
+        type="password"
+        value=""
+      />
+      <button
+        class="sc-gLDzan jnZmUv"
+        type="submit"
+      >
+        <span>
+          Entrar
+        </span>
+      </button>
+    </form>
+  </div>
+</div>
+`;
