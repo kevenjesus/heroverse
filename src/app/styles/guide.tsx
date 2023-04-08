@@ -54,10 +54,17 @@ export const GlobalStyle = createGlobalStyle`
         line-height: 150%;
     }
 
+    a {
+        text-decoration: none;
+    }
+
     button {
         border: 0;
         background: transparent;
         cursor: pointer;
+    }
+    hr {
+        margin: 30px 0;
     }
 `
 

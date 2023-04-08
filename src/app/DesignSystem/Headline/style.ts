@@ -8,4 +8,5 @@ export const HeadlineItem = styled.h1<FontStyleHeadlineTYpe>`
     color: ${({color}) => color ? color : colors.black};
     font-weight: ${({weight}) => weight ? weight : weightValues.bold};
     font-size: ${({type}) => type ? HeadlineTypes[type] : fontSizes.heading1};
-`
+    text-align: ${({align}) => align ? align : 'left'};
+`   

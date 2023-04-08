@@ -12,6 +12,9 @@ import { OptionType } from "@/app/DesignSystem/Select/types"
 import { CardProps } from "@/app/DesignSystem/Card/types"
 import Card from "@/app/DesignSystem/Card"
 import { uid } from "uid"
+import HeroesResuls from "../../HeroesResult"
+import Headline from "@/app/DesignSystem/Headline"
+import Modal from "@/app/DesignSystem/Modal"
 
 const statusData:OptionType[] = [
     {
@@ -30,6 +33,7 @@ export default function HomePage({categories, heroes}: HomePageProps) {
     const [categorySelected, setCategory] = useState<OptionType | null>(null)
     const [search, setSearch] = useState('')
     const [heroData, setHero] = useState<HeroTypes[]>([])
+    const [modal, setModal] = useState(false)
 
     const HeroFiltered = useCallback((hero: HeroTypes) => {
         if(status.value === hero.Active) {
@@ -91,6 +95,9 @@ export default function HomePage({categories, heroes}: HomePageProps) {
     return (
         <Layout>
             <Header />
+            <Modal title="Novo Heroi" open={modal} onClose={() => setModal(false)}>
+                modal
+            </Modal>
             <Guide.Container>
             <S.FilterMenu>
                 <S.FilterCategory>
@@ -103,18 +110,13 @@ export default function HomePage({categories, heroes}: HomePageProps) {
                     <Select key='FilterStatus' options={statusData} value={status.label} onChange={handleStatus} placeholder='Filtrar por status' />
                 </S.FilterStatus>
                 <S.BtnNewHero>
-                    <Button variant="primary">Criar novo heroi</Button>
+                    <Button onClick={() => setModal(true)} variant="primary">Criar novo heroi</Button>
                 </S.BtnNewHero>
             </S.FilterMenu>
+            <hr />
+            <Headline as="h2">Herois</Headline>
             <S.ResultsCards>
-                {
-                    heroList.map(hero => (
-                        <Card key={uid()} {...hero} actions={{
-                            onDelete: () => onEditHero(hero), 
-                            onEdit: () => onDeleteHero(hero)
-                        }} />
-                    ))
-                }
+                <HeroesResuls heroes={heroList} search={search} onDeleteHero={onDeleteHero} onEditHero={onEditHero} />
             </S.ResultsCards>
             </Guide.Container>
         </Layout>

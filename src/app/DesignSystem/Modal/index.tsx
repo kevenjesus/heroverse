@@ -30,7 +30,7 @@ export default function Modal({children, title, open, onClose, onClosed, onOpene
     }
     return (
         <>
-            <Guide.Overlay />
+            <Guide.Overlay onClick={onClosedModal} />
             <S.ModalItem>
                 <S.Heading>
                     <Headline as="h3">{title}</Headline>
