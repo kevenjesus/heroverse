@@ -7,6 +7,7 @@ export const ButtonItem = styled.button<ButtonTypes>`
     height: 60px;
     display: flex;
     justify-content: center;
+    align-items: center;
     padding: 15px 0;
     gap: 10px;
     background: ${({variant}) => variant ? colors[variant] : colors.primary};

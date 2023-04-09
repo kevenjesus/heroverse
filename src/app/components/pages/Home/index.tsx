@@ -17,6 +17,10 @@ import useFetch from "@/app/hook/useFetch"
 
 export const statusData:OptionType[] = [
     {
+        label: 'Todos',
+        value: 0
+    },
+    {
         label: 'Ativo',
         value: true
     },
@@ -37,10 +41,12 @@ export default function HomePage({categories, heroes}: HomePageProps) {
     const { getHeroes, removeHero } = useFetch()
 
     const HeroFiltered = useCallback((hero: HeroTypes) => {
-        if(status.value === hero.Active) {
+        if(status.value === hero.Active || status.value === 0) {
             if(hero.Name.toLowerCase().includes(search.toLowerCase()) && (categorySelected !== null ? categorySelected.value === hero.Category.Id : true)) {
                 return true
             }
+        }else {
+
         }
         return false
     }, [categorySelected, status, search])
@@ -64,7 +70,8 @@ export default function HomePage({categories, heroes}: HomePageProps) {
     }, [])
 
     const handleCategory = useCallback((item: OptionType) => {
-        setCategory(item)
+        const value = item.value === 0 ? null : item;
+        setCategory(value)
     }, [])
 
     const handleSearch = useCallback((event: ChangeEvent<HTMLInputElement>) => {
@@ -83,7 +90,8 @@ export default function HomePage({categories, heroes}: HomePageProps) {
             label: item.Name,
             value: item.Id
        }))
-       setCategoryList(parseCategeory)
+       const parseCategoryConcat = [{label: 'Todos', value: 0}].concat(parseCategeory)
+       setCategoryList(parseCategoryConcat)
     }, [categories])
 
     useEffect(() => {

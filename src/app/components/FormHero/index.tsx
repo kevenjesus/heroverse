@@ -40,7 +40,7 @@ export default function FormHero({hero, isEdit, categoryList, onSaved}: FormHero
         else if(!name) {
             setMessage({type: 'error' , message: 'Por favor. Informe o campo nome'})
             return false
-        }else if(status === null) {
+        }else if(status === null || status.value === 0) {
             setMessage({type: 'error' , message: 'Por favor. Escolha defina um status'})
             return false
         }else {
