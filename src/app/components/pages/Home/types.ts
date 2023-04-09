@@ -1,5 +1,5 @@
 export interface CategoryTypes {
-    Id: number
+    Id?: number
     Name: string
 }
 

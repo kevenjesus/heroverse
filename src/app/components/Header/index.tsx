@@ -19,7 +19,9 @@ export default function Header() {
     return (
         <S.Header>
             <Guide.Container>
-                <S.Logo src='/HeroVerse.png' alt="Hero verse" />
+                <Link href="/">
+                    <S.Logo src='/HeroVerse.png' alt="Hero verse" />
+                </Link>
                 <S.MenuMobile onClick={handleMenu} src='/menu.png' alt="Abrir menu" />
             </Guide.Container>
             {openMenu && <Guide.Overlay onClick={handleMenu} />}
