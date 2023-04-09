@@ -7,13 +7,14 @@ export const ModalItem = styled.div`
     padding: 20px;
     background: #fff;
     position: fixed;
-    top: 20%;
+    top: 10%;
     left: 2.5%;
     z-index: 6;
     @media (min-width: ${breakpoints.sm}) {
         width: 450px;
         left: 50%;
         margin-left: -225px;
+        top: 20%;
     }
 `
 

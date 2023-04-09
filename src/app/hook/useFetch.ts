@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import { addHero, getAllHeroes, updateHero } from "../services/hero";
+import { addHero, deleteHero, getAllHeroes, updateHero } from "../services/hero";
 import { heroData } from "../services/types";
 
 type callBackType = (payload?: any) => void
@@ -31,6 +31,18 @@ export default function useFetch() {
         }
     }, [])
 
+    const removeHero = useCallback(async (id: number, onSuccess?: callBackType, onError?: callBackType) => {
+        setLoading(true)
+        try {
+            await deleteHero(id)
+            onSuccess && onSuccess()
+        } catch (err) {
+            onError && onError()
+        } finally {
+            setLoading(false) 
+        }
+    }, [])
+
     const getHeroes = useCallback(async (onSuccess?: callBackType, onError?: callBackType) => {
         setLoading(true)
         try {
@@ -47,6 +59,7 @@ export default function useFetch() {
         loading,
         createHero,
         changeHero,
-        getHeroes
+        getHeroes,
+        removeHero
     }
 }

@@ -47,3 +47,18 @@ export async function updateHero(data: heroData) {
         console.log('erro', err)
     }
 }
+
+export async function deleteHero(id: number) {
+    try {
+        const request = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/Heroes/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+                'accessKey': `${process.env.NEXT_PUBLIC_API_KEY}`
+            }
+        })
+        return request.status
+    } catch (err) {
+        console.log('erro', err)
+    }
+}

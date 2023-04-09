@@ -34,7 +34,7 @@ export default function HomePage({categories, heroes}: HomePageProps) {
     const [heroData, setHero] = useState<HeroTypes[]>([])
     const [heroSelected, setHeroSelected] = useState<HeroTypes | null>(null)
     const [modal, setModal] = useState(false)
-    const { getHeroes } = useFetch()
+    const { getHeroes, removeHero } = useFetch()
 
     const HeroFiltered = useCallback((hero: HeroTypes) => {
         if(status.value === hero.Active) {
@@ -51,13 +51,12 @@ export default function HomePage({categories, heroes}: HomePageProps) {
     }, [])
     
     const onEditHero = useCallback((hero: HeroTypes) => {
-        console.log('e ai')
         setHeroSelected(hero)
         setModal(true)
     }, [])
 
     const onDeleteHero = useCallback((hero: HeroTypes) => {
-        
+        removeHero(hero.Id, updateDataHeroes)
     }, [])
     
     const handleStatus = useCallback((status: OptionType) => {

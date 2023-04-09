@@ -23,12 +23,8 @@ export default function FormHero({hero, isEdit, categoryList, onSaved}: FormHero
         setName(event.target.value)
     }, [])
 
-    const handleAddSucess = useCallback(() => {
-        setMessage({type: 'success', message: 'Heroi cadastrado com sucesso!'})
-        setTimeout(onSaved, 1500)
-    }, [])
-    const handleUpdateSuccess = useCallback(() => {
-        setMessage({type: 'success', message: 'Heroi atualizado com sucesso!'})
+    const handleSuccess = useCallback((message: string) => {
+        setMessage({type: 'success', message: message})
         setTimeout(onSaved, 1500)
     }, [])
 
@@ -36,8 +32,28 @@ export default function FormHero({hero, isEdit, categoryList, onSaved}: FormHero
         setMessage({type: 'error', message: 'Ops! Erro inesperado. Tente novamente'})
     }, [])
 
+    const validFields = useCallback(() => {
+        if(!categorySelected) {
+            setMessage({type: 'error' , message: 'Por favor. Escolha uma categoria'})
+            return false
+        }
+        else if(!name) {
+            setMessage({type: 'error' , message: 'Por favor. Informe o campo nome'})
+            return false
+        }else if(status === null) {
+            setMessage({type: 'error' , message: 'Por favor. Escolha defina um status'})
+            return false
+        }else {
+            setMessage(null)
+            return true
+        }
+    }, [name, categorySelected, status, setMessage])
+
     const submiting = useCallback(async (event: ChangeEvent<HTMLFormElement>) => {
         event.preventDefault()
+        if(!validFields()) {
+            return;
+        }
         if(categorySelected && status) {
             const data: heroData = {
                 Id: hero?.Id,
@@ -46,9 +62,9 @@ export default function FormHero({hero, isEdit, categoryList, onSaved}: FormHero
                 Active: Boolean(status.value)
             }
             if(isEdit) {
-                changeHero(data, handleAddSucess, handleError)
+                changeHero(data, () => handleSuccess('Heroi atualizado com sucesso!'), handleError)
             }else {
-                createHero(data, handleUpdateSuccess, handleError)
+                createHero(data, () => handleSuccess('Heroi cadastrado com sucesso!'), handleError)
             }
         }
        
