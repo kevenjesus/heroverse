@@ -14,9 +14,13 @@ export default function HeroesResuls({heroes, search, onDeleteHero, onEditHero}:
             <>
             {
                 heroes.map(hero => (
-                <Card key={uid()} {...hero} actions={{
-                        onDelete: () => onEditHero(hero), 
-                        onEdit: () => onDeleteHero(hero)
+                <Card key={uid()} title={hero.Name} category={{
+                    id: hero.Category.Id, 
+                    label: hero.Category.Name, 
+                    variant: hero.Active ? 'primary' : 'black'
+                    }} actions={{
+                        onDelete: () => onDeleteHero(hero), 
+                        onEdit: () => onEditHero(hero)
                     }} />
                 ))
             }

@@ -10,11 +10,13 @@ export interface HeroTypes {
     Category: CategoryTypes
 }
 
+export interface HeroesData {
+    Items: HeroTypes[]
+}
+
 export interface HomePageProps {
     categories: {
         Items: CategoryTypes[]
     }
-    heroes: {
-        Items: HeroTypes[]
-    }
+    heroes: HeroesData
 }

@@ -4,11 +4,10 @@ import Typographic from '../Typographic'
 import * as S from './style'
 import { CardProps } from './types'
 
-export default function Card({id, title, description, category, actions}: CardProps) {
+export default function Card({title, category, actions}: CardProps) {
     return (
         <S.CardItem>
             <Headline as="h4">{title}</Headline>
-            <Typographic>{description}</Typographic>
             <S.CardFooter>
                 <Label variant={category.variant}>{category.label}</Label>
                 {

@@ -9,14 +9,13 @@ import TextField from "@/app/DesignSystem/TextField"
 import Button from "@/app/DesignSystem/Button"
 import { ChangeEvent, useCallback, useEffect, useMemo, useState } from "react"
 import { OptionType } from "@/app/DesignSystem/Select/types"
-import { CardProps } from "@/app/DesignSystem/Card/types"
-import Card from "@/app/DesignSystem/Card"
-import { uid } from "uid"
 import HeroesResuls from "../../HeroesResult"
 import Headline from "@/app/DesignSystem/Headline"
 import Modal from "@/app/DesignSystem/Modal"
+import FormHero from "../../FormHero"
+import useFetch from "@/app/hook/useFetch"
 
-const statusData:OptionType[] = [
+export const statusData:OptionType[] = [
     {
         label: 'Ativo',
         value: true
@@ -33,7 +32,9 @@ export default function HomePage({categories, heroes}: HomePageProps) {
     const [categorySelected, setCategory] = useState<OptionType | null>(null)
     const [search, setSearch] = useState('')
     const [heroData, setHero] = useState<HeroTypes[]>([])
+    const [heroSelected, setHeroSelected] = useState<HeroTypes | null>(null)
     const [modal, setModal] = useState(false)
+    const { getHeroes } = useFetch()
 
     const HeroFiltered = useCallback((hero: HeroTypes) => {
         if(status.value === hero.Active) {
@@ -44,24 +45,19 @@ export default function HomePage({categories, heroes}: HomePageProps) {
         return false
     }, [categorySelected, status, search])
 
-    const onEditHero = useCallback((hero: CardProps) => {
-
+    const closeModal = useCallback(() => {
+        setModal(false)
+        setHeroSelected(null)
+    }, [])
+    
+    const onEditHero = useCallback((hero: HeroTypes) => {
+        console.log('e ai')
+        setHeroSelected(hero)
+        setModal(true)
     }, [])
 
-    const onDeleteHero = useCallback((hero: CardProps) => {
+    const onDeleteHero = useCallback((hero: HeroTypes) => {
         
-    }, [])
-
-    const HeroMapping = useCallback((hero: HeroTypes): CardProps  => {
-        return {
-            id: hero.Id,
-            title: hero.Name,
-            description: '',
-            category: {
-                label: hero.Category.Name,
-                variant: hero.Active ? 'primary' : 'black'
-            }
-        }
     }, [])
     
     const handleStatus = useCallback((status: OptionType) => {
@@ -74,6 +70,13 @@ export default function HomePage({categories, heroes}: HomePageProps) {
 
     const handleSearch = useCallback((event: ChangeEvent<HTMLInputElement>) => {
         setSearch(event.target.value)
+    }, [])
+
+    const updateDataHeroes = useCallback(() => {
+        getHeroes((payload) => {
+            setHero(payload.Items)
+        })
+        setModal(false)
     }, [])
 
     useEffect(() => {
@@ -89,14 +92,16 @@ export default function HomePage({categories, heroes}: HomePageProps) {
     }, [heroes])
 
     const heroList = useMemo(() => {
-        return heroData.filter(HeroFiltered).map(HeroMapping)
+        return heroData.filter(HeroFiltered)
     }, [search, status, categorySelected, heroData])
+
+    const isEdit = heroSelected !== null
 
     return (
         <Layout>
             <Header />
-            <Modal title="Novo Heroi" open={modal} onClose={() => setModal(false)}>
-                modal
+            <Modal title={`${isEdit ? 'Editar Heroi' : 'Novo Heroi'}`} open={modal} onClose={closeModal}>
+                <FormHero hero={heroSelected} isEdit={isEdit} onSaved={updateDataHeroes} categoryList={categoryList} />
             </Modal>
             <Guide.Container>
             <S.FilterMenu>

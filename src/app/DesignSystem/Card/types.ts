@@ -1,10 +1,9 @@
 import { colorsType } from "@/app/styles/types"
 
 export interface CardProps {
-    id: number
     title: string
-    description: string
     category: {
+        id: number
         label: string
         variant: colorsType
     }
