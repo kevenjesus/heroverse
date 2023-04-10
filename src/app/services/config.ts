@@ -2,7 +2,7 @@ import { ReturnFetchType } from "./types"
 
 export const headers = {
     'Content-Type': 'application/json',
-    'accessKey': `${process.env.NEXT_PUBLIC_API_KEY}`,
+    'accessKey': `${process.env.API_KEY}`,
     "Access-Control-Allow-Origin": "*"
 }
 
