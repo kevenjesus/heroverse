@@ -10,7 +10,7 @@ import * as S from './style'
 
 export default function FormCategory({category, isEdit, onSaved}: FormCategoryProps) {
     const [name, setName] = useState("")
-    const { createCategory, changeCategory } = useFetch()
+    const { loading, createCategory, changeCategory } = useFetch()
     const [message, setMessage] = useState<MessageTypes | null>(null)
 
     const handleName = useCallback((event: ChangeEvent<HTMLInputElement>) => {
@@ -62,7 +62,7 @@ export default function FormCategory({category, isEdit, onSaved}: FormCategoryPr
     return (
         <S.Form onSubmit={submiting}>
             <TextField type="text" name="name" value={name} onChange={handleName} placeholder='Digite o nome da categoria' />
-            <Button variant="primary">{isEdit ? 'Salvar alterações' : 'Cadastrar categoria'}</Button>
+            <Button loading={loading} variant="primary">{isEdit ? 'Salvar alterações' : 'Cadastrar categoria'}</Button>
             {
                 message && (
                     <Alert type={message.type}>{message.message}</Alert>

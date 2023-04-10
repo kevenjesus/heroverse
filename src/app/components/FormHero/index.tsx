@@ -27,9 +27,14 @@ export default function FormHero({hero, isEdit, categoryList, onSaved}: FormHero
         setTimeout(onSaved, 1500)
     }, [])
 
-    const handleError = useCallback(() => {
-        setMessage({type: 'error', message: 'Ops! Erro inesperado. Tente novamente'})
-    }, [])
+    const handleError = useCallback(({statusCode}: {statusCode: number}) => {
+        if(statusCode === 400) {
+            setMessage({type: 'error', message: `Ops! Já existe um heroi cadastro com o nome "${name}"`})
+        }else {
+            setMessage({type: 'error', message: 'Ops! Erro inesperado. Tente novamente'})
+        }
+        
+    }, [name])
 
     const validFields = useCallback(() => {
         if(!categorySelected) {

@@ -15,6 +15,7 @@ export default function useFetch() {
         const { error, statusCode } = await addHero(data)
         if(error && onError) {
             onError({error, statusCode})
+            setLoading(false)
         }else {
             setTimeout(() => {
                 onSuccess && onSuccess()
@@ -28,10 +29,13 @@ export default function useFetch() {
         const { error, statusCode } = await updateHero(data)
         if(error && onError) {
             onError({error, statusCode})
+            setLoading(false)
         }else {
-            onSuccess && onSuccess()
+            setTimeout(() => {
+                onSuccess && onSuccess()
+                setLoading(false)
+            }, 1000)
         }
-        setLoading(false)
     }, [])
 
     const removeHero = useCallback(async (id: number, onSuccess?: callBackSuccess, onError?: callBackError) => {
@@ -62,10 +66,13 @@ export default function useFetch() {
         const { error, statusCode } = await addCategory(data)
         if(error && onError) {
             onError({error, statusCode})
+            setLoading(false)
         }else {
-            onSuccess && onSuccess()
+            setTimeout(() => {
+                onSuccess && onSuccess()
+                setLoading(false)
+            }, 1000)
         }
-        setLoading(false)
     }, [])
 
     const changeCategory = useCallback(async (data: CategoryTypes, onSuccess?: callBackSuccess, onError?: callBackError) => {
@@ -73,10 +80,13 @@ export default function useFetch() {
         const { error, statusCode } = await updateCategory(data)
         if(error && onError) {
             onError({error, statusCode})
+            setLoading(false)
         }else {
-            onSuccess && onSuccess()
+            setTimeout(() => {
+                onSuccess && onSuccess()
+                setLoading(false)
+            }, 1000)
         }
-        setLoading(false)
     }, [])
 
     const removeCategory = useCallback(async (id: number, onSuccess?: callBackSuccess, onError?: callBackError) => {
