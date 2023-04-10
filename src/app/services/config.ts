@@ -1,8 +1,11 @@
 import { ReturnFetchType } from "./types"
 
+export const API_KEY = '0c9599c03ab2419d98b7cb3ff009cb78'
+export const API_URL = 'http://keven.globalthings.net/api'
+
 export const headers = {
     'Content-Type': 'application/json',
-    'accessKey': `${process.env.API_KEY}`,
+    'accessKey': `${API_KEY}`,
     "Access-Control-Allow-Origin": "*"
 }
 
