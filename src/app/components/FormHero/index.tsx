@@ -37,7 +37,7 @@ export default function FormHero({hero, isEdit, categoryList, onSaved}: FormHero
     }, [name])
 
     const validFields = useCallback(() => {
-        if(!categorySelected) {
+        if(!categorySelected || categorySelected.value === 0) {
             setMessage({type: 'error' , message: 'Por favor. Escolha uma categoria'})
             return false
         }
