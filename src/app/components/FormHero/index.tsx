@@ -15,7 +15,7 @@ export default function FormHero({hero, isEdit, categoryList, onSaved}: FormHero
     const [categorySelected, setCategory] = useState<OptionType | null>(null)
     const [name, setName] = useState("")
     const [status, setStatus] = useState<OptionType | null>(null)
-    const { createHero, changeHero } = useFetch()
+    const { loading, createHero, changeHero } = useFetch()
     const [message, setMessage] = useState<MessageTypes | null>(null)
 
     const handleName = useCallback((event: ChangeEvent<HTMLInputElement>) => {
@@ -87,7 +87,7 @@ export default function FormHero({hero, isEdit, categoryList, onSaved}: FormHero
             <Select key='formCategory' options={categoryList} value={categorySelected?.label} onChange={(item) => setCategory(item)} placeholder='Selecione a categoria' />
             <TextField type="text" name="name" value={name} onChange={handleName} placeholder='Digite o nome do heroi' />
             <Select key='formStatus' options={statusData} value={status?.label} onChange={(item) => setStatus(item)} placeholder='Defina um status' />
-            <Button variant="primary">{isEdit ? 'Salvar alterações' : 'Cadastrar heroi'}</Button>
+            <Button loading={loading} variant="primary">{isEdit ? 'Salvar alterações' : 'Cadastrar heroi'}</Button>
             {
                 message && (
                     <Alert type={message.type}>{message.message}</Alert>

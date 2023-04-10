@@ -57,8 +57,9 @@ export default function CategoryPage({categories}: CategoryProps) {
             return;
         }
 
-        await Promise.all([heroesIdRemove, removeCategory(category.Id, closeModalError)])
-        updateCategories()
+        await Promise.all([...heroesIdRemove])
+        await removeCategory(category.Id, closeModalError), updateCategories()
+        
     
     }, [getHeroes, removeCategory, removeHero, closeModalError])
 

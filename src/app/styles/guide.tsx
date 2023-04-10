@@ -82,4 +82,15 @@ export const Overlay = styled.div`
 export const Container = styled.div`
     width: 100%;
     padding: 0 16px;
+    @media (min-width: ${breakpoints.sm}) {
+        width: 735px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    @media (min-width: ${breakpoints.lg}) {
+        width: 1248px;
+    }
+    @media (min-width: ${breakpoints.xl}) {
+        width: 1366px;
+    }
 `

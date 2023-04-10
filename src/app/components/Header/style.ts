@@ -1,4 +1,4 @@
-import { fontSizes } from "@/app/styles/guide";
+import { breakpoints, fontSizes } from "@/app/styles/guide";
 import styled from "styled-components";
 import { WrapperMenuProps } from "./types";
 
@@ -17,12 +17,16 @@ export const Header = styled.header`
 
 export const Logo = styled.img`
     width: 165px;
+    cursor: pointer;
 `
 
 export const MenuMobile = styled.img`
     width: 38px;
     height: 38px;
     cursor: pointer;
+    @media (min-width: ${breakpoints.lg}) {
+        display: none;
+    }
 `
 
 export const MenuWrapper = styled.div<WrapperMenuProps>`
@@ -41,7 +45,22 @@ export const MenuWrapper = styled.div<WrapperMenuProps>`
     p,a {
         font-size: ${fontSizes.heading3};
     }
+    @media (min-width: ${breakpoints.sm}) {
+        max-width: 365px;
+    }
+    @media (min-width: ${breakpoints.lg}) {
+        flex-direction: row;
+        position: initial;
+        z-index: 0;
+        right: 0;
+        p,a {
+        font-size: ${fontSizes.heading2};
+    }
+    }
 `
 export const CloseMenu = styled.button`
     margin-left: auto;
+    @media (min-width: ${breakpoints.lg}) {
+        display: none;
+    }
 `

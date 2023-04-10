@@ -1,3 +1,4 @@
+import { breakpoints } from '@/app/styles/guide'
 import styled from 'styled-components'
 
 export const Menu = styled.div`
@@ -7,4 +8,8 @@ export const Menu = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @media (min-width: ${breakpoints.lg}) {
+        width: 300px;
+    }
 `

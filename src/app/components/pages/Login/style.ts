@@ -1,3 +1,4 @@
+import { breakpoints } from '@/app/styles/guide';
 import styled from 'styled-components'
 
 export const Wrapper = styled.div`
@@ -7,6 +8,11 @@ export const Wrapper = styled.div`
     flex-direction: column;
     gap: 60px;
     padding: 60px 16px;
+    @media (min-width: ${breakpoints.sm}) {
+        width: 365px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 `
 export const Logo = styled.img`
     display: block;

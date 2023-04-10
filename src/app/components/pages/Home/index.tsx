@@ -88,7 +88,7 @@ export default function HomePage({categories, heroes}: HomePageProps) {
     useEffect(() => {
        const parseCategeory = categories.Items.map(item => ({
             label: item.Name,
-            value: item.Id
+            value: item.Id ? item.Id : 0
        }))
        const parseCategoryConcat = [{label: 'Todos', value: 0}].concat(parseCategeory)
        setCategoryList(parseCategoryConcat)

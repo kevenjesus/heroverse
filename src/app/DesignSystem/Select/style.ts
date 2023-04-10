@@ -20,7 +20,7 @@ export const Overlay = styled.div`
 
 export const SelectField = styled.div`
     width: 100%;
-    height: 45px;
+    height: 60px;
     background: #fff;
     border: 2px solid ${colors.black};
     display: flex;
@@ -50,6 +50,7 @@ export const SelectBoxContent = styled.div`
     display: flex;
     flex-direction: column;
     overflow-y: scroll;
+    background-color: #fff;
     &::-webkit-scrollbar {
         width: 10px;
     }
@@ -57,6 +58,8 @@ export const SelectBoxContent = styled.div`
         background: rgba(62, 56, 56, 0.2);
     }
     @media (min-width: ${breakpoints.lg}) {
+        height: auto;
+        overflow-y: initial;
         border: 2px solid ${colors.black};
     }
 `

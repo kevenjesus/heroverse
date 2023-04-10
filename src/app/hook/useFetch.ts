@@ -18,9 +18,9 @@ export default function useFetch() {
         }else {
             setTimeout(() => {
                 onSuccess && onSuccess()
+                setLoading(false)
             }, 1000)
         }
-        setLoading(false)
     }, [])
 
     const changeHero = useCallback(async (data: heroData, onSuccess?: callBackSuccess, onError?: callBackError) => {
