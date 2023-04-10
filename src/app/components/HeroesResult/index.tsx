@@ -15,7 +15,7 @@ export default function HeroesResuls({heroes, search, onDeleteHero, onEditHero}:
             {
                 heroes.map(hero => (
                 <Card key={uid()} title={hero.Name} category={{
-                    id: hero.Category.Id, 
+                    id: hero.Category.Id ? hero.Category.Id : 0, 
                     label: hero.Category.Name, 
                     variant: hero.Active ? 'primary' : 'black'
                     }} actions={{
