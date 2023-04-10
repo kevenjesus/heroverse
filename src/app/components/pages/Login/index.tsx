@@ -74,7 +74,7 @@ export default function LoginPage() {
 
     return (
         <S.Wrapper>
-            <S.Logo width={160} src='/heroverse.png' alt="Hero Verse" />
+            <S.Logo width={160} src='/HeroVerse.png' alt="Hero Verse" />
             <S.Form onSubmit={submiting}>
                 <TextField type="text" name="login" placeholder='Login' value={fieldLogin} onChange={handleLogin} />
                 <TextField type="password" name="password" placeholder='Senha' value={fieldPassword} onChange={handlePassword} />
