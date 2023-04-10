@@ -3,7 +3,7 @@
 exports[`LoginPage should render 1`] = `
 <div>
   <div
-    class="sc-hLseeU ecUSAy"
+    class="sc-hLseeU gBExbG"
   >
     <img
       alt="Hero Verse"
@@ -15,7 +15,7 @@ exports[`LoginPage should render 1`] = `
       class="sc-jTrPJq gfIiLF"
     >
       <input
-        class="sc-dmqHEX aYPxC"
+        class="sc-dmqHEX fXVpfR"
         name="login"
         placeholder="Login"
         role="textbox"
@@ -23,7 +23,7 @@ exports[`LoginPage should render 1`] = `
         value=""
       />
       <input
-        class="sc-dmqHEX aYPxC"
+        class="sc-dmqHEX fXVpfR"
         name="password"
         placeholder="Senha"
         role="textbox"
@@ -31,7 +31,7 @@ exports[`LoginPage should render 1`] = `
         value=""
       />
       <button
-        class="sc-gLDzan jnZmUv"
+        class="sc-gLDzan iEQYAJ"
         type="submit"
       >
         <span>
@@ -39,6 +39,15 @@ exports[`LoginPage should render 1`] = `
         </span>
       </button>
     </form>
+    <div
+      style="padding: 50px 0px;"
+    >
+      <p
+        class="sc-iAEyYk jnoSnn"
+      >
+        Hero Verse - Todos os direitos reservados
+      </p>
+    </div>
   </div>
 </div>
 `;

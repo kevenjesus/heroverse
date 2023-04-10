@@ -6,10 +6,10 @@ exports[`Select should display placeholder text when no option is selected 1`] =
     class="sc-hLseeU dcExOP"
   >
     <div
-      class="sc-jTrPJq kBePcy"
+      class="sc-jTrPJq jrTTrt"
     >
       <p
-        class="sc-dmqHEX hZDiJS"
+        class="sc-dmqHEX eJhdPM"
       >
         Selecione
       </p>

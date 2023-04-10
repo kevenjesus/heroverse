@@ -5,16 +5,16 @@ exports[`Modal should not render 1`] = `<div />`;
 exports[`Modal should render 1`] = `
 <div>
   <div
-    class="sc-hLseeU jXRGCP"
+    class="sc-beqWaB hPQajf"
   />
   <div
-    class="sc-eDDNvR hlQcnS"
+    class="sc-hLseeU dxqZKz"
   >
     <header
-      class="sc-jTrPJq hkROzX"
+      class="sc-eDDNvR euiAjC"
     >
       <h3
-        class="sc-dmqHEX mcoGn"
+        class="sc-dmqHEX fohnnB"
         type="h3"
       >
         modal

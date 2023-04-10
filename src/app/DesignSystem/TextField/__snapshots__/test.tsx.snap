@@ -3,7 +3,7 @@
 exports[`TextField should render the component 1`] = `
 <div>
   <input
-    class="sc-dmqHEX aYPxC"
+    class="sc-dmqHEX fXVpfR"
     name="test-field"
     placeholder="Enter your text here"
     role="textbox"

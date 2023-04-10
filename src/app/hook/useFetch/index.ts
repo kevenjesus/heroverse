@@ -1,8 +1,8 @@
 import { useCallback, useState } from "react";
-import { addHero, deleteHero, getAllHeroes, updateHero } from "../services/hero";
-import { heroData } from "../services/types";
-import { CategoryTypes } from "../components/pages/Home/types";
-import { addCategory, deleteCategory, getAllCategories, updateCategory } from "../services/category";
+import { addHero, deleteHero, getAllHeroes, updateHero } from "../../services/hero";
+import { heroData } from "../../services/types";
+import { CategoryTypes } from "../../components/pages/Home/types";
+import { addCategory, deleteCategory, getAllCategories, updateCategory } from "../../services/category";
 
 type callBackSuccess = (payload?: any) => void
 type callBackError = ({error, statusCode}: {error: string, statusCode: number}) => void

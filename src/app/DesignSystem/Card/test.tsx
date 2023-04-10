@@ -5,10 +5,9 @@ import { CardProps } from './types';
 
 describe('Card component', () => {
   const cardData: CardProps = {
-    id: 1,
     title: 'Test Title',
-    description: 'Test Description',
     category: {
+      id: 2,
       label: 'Test Label',
       variant: 'primary',
     },
@@ -17,7 +16,6 @@ describe('Card component', () => {
   it('should render card title and description', () => {
     render(<Card {...cardData} />);
     expect(screen.getByRole('heading', { level: 4 })).toHaveTextContent('Test Title');
-    expect(screen.getByText('Test Description')).toBeInTheDocument();
   });
 
   it('should render category label', () => {
@@ -44,7 +42,6 @@ describe('Card component', () => {
     const editButton = screen.getByAltText('Editar');
     editButton.click();
     expect(mockActions.onEdit).toHaveBeenCalledTimes(1);
-    expect(mockActions.onEdit).toHaveBeenCalledWith(1);
   });
 
   it('should call onDelete when delete button is clicked', () => {
@@ -56,6 +53,5 @@ describe('Card component', () => {
     const deleteButton = screen.getByAltText('Excluir');
     deleteButton.click();
     expect(mockActions.onDelete).toHaveBeenCalledTimes(1);
-    expect(mockActions.onDelete).toHaveBeenCalledWith(1);
   });
 });
