@@ -8,7 +8,7 @@ exports[`LoginPage should render 1`] = `
     <img
       alt="Hero Verse"
       class="sc-eDDNvR gfOpcO"
-      src="/heroverse.png"
+      src="/HeroVerse.png"
       width="160"
     />
     <form
